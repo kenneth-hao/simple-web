@@ -11,4 +11,5 @@ public interface UserDao {
      * @return
      */
     public int insertUser(User user);
+
 }
