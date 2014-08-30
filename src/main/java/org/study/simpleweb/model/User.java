@@ -1,5 +1,6 @@
 package org.study.simpleweb.model;
 
+
 import java.io.Serializable;
 
 /**
