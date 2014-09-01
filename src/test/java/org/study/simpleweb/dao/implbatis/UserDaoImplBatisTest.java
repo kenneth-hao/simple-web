@@ -22,6 +22,7 @@ public class UserDaoImplBatisTest extends BaseTest {
     private UserDao userDao;
 
     @Test
+    @DataSet
     public void findByIdTest() {
         User u = userDao.findById(new Integer(1000));
         Assert.assertNotNull(u);
@@ -31,18 +32,17 @@ public class UserDaoImplBatisTest extends BaseTest {
     @Test
     @DataSet("UserDaoImplBatisTest.empty.xml")
     @ExpectedDataSet
-    @Transactional(TransactionMode.ROLLBACK)
+    @Transactional(TransactionMode.DISABLED)
     public void insertTest() throws Exception {
         User u = new User();
         u.setUserName("Kenneth");
-        u.setPassword("12345");
+        u.setPassword("123456");
         u.setUserType((short) 1);
         u.setCredit((short) 20);
         u.setLocked((short) 0);
         u.setLastVisit(DateUtils.parseDate("2011/6/6", new String[] { "yyyy/MM/dd" }));
         u.setLastIp("127.0.0.1");
         userDao.insert(u);
-        userDao.commit();
     }
 
 }

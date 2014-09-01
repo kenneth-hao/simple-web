@@ -50,7 +50,4 @@ public class BaseDaoImplBatis<E, PK extends Serializable> extends SqlSessionDaoS
         super.setSqlSessionTemplate(sqlSessionTemplate);
     }
 
-    public void commit() {
-        getSqlSession().commit();
-    }
 }

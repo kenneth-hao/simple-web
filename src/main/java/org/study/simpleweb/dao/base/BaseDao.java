@@ -11,5 +11,4 @@ public interface BaseDao<E, PK extends Serializable> {
 
     E findById(PK id);
 
-    void commit();
 }
