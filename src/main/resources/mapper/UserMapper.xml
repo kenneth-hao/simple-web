@@ -2,16 +2,61 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="cn.springmvc.dao.UserDAO">
+<mapper namespace="org.study.simpleweb.model.UserMapper">
 
-    <insert id="insertUser" parameterType="User" keyProperty="id">
-        insert into days_user(
-        state,
-        nickname)
+    <sql id="columnPk">
+        user_id
+    </sql>
+
+    <sql id="columnsExcludePk">
+         user_name,
+         password,
+         user_type,
+         locked,
+         credit,
+         last_visit,
+         last_ip
+    </sql>
+
+    <sql id="tableName">
+        t_user
+    </sql>
+    
+    <resultMap id="userResultMap" type="User">
+        <id property="userId" column="user_id" javaType="Integer" />
+        <result property="userName" column="user_name" javaType="String" />
+        <result property="password" column="password" javaType="String" />
+        <result property="userType" column="user_type" javaType="Short" />
+        <result property="locked" column="locked" javaType="Short" />
+        <result property="credit" column="credit" javaType="Integer" />
+        <result property="lastVisit" column="last_visit" javaType="Date" />
+        <result property="lastIp" column="last_ip" javaType="String" />
+    </resultMap>
+
+    <insert id="insert" parameterType="User" keyProperty="userId" useGeneratedKeys="true">
+        insert into <include refid="tableName" /> (
+            <include refid="columnsExcludePk" />
+        )
         values
         (
-        #{state},
-        #{nickname})
+            #{userName},
+            #{password},
+            #{userType},
+            #{locked},
+            #{credit},
+            #{lastVisit},
+            #{lastIp}
+        )
     </insert>
+
+    <select id="findById" parameterType="Integer" resultMap="userResultMap">
+        select
+          <include refid="columnPk" />,
+          <include refid="columnsExcludePk" />
+        from
+          <include refid="tableName" />
+        where
+          <include refid="columnPk" />=#{id}
+    </select>
 
 </mapper>

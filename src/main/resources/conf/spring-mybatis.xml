@@ -61,6 +61,10 @@
           p:mapperLocations="classpath:mapper/*.xml"/>
     <!-- configLocation为mybatis属性 mapperLocations为所有mapper-->
 
+    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg index="0" ref="sqlSessionFactory"/>
+    </bean>
+
     <!-- spring与mybatis整合配置，扫描所有dao -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"
           p:basePackage="org.study.simpleweb.dao"

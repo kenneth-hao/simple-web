@@ -9,14 +9,14 @@ import org.study.simpleweb.model.User;
 /**
  * Created by haoyuewen on 8/28/14.
  */
-@Service
+@Service("userServiceImpl")
 public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserDao userDao;
 
     @Override
-    public int insertUser(User user) {
+    public int saveUser(User user) {
         return 0;
     }
 

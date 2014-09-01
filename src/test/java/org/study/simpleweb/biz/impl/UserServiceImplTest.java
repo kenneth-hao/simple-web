@@ -1,7 +1,8 @@
-package org.study.simpleweb.biz;
+package org.study.simpleweb.biz.impl;
 
 import org.junit.Test;
 import org.study.simpleweb.base.BaseTest;
+import org.study.simpleweb.biz.UserService;
 import org.study.simpleweb.model.User;
 import org.unitils.spring.annotation.SpringBeanByType;
 
@@ -16,9 +17,8 @@ public class UserServiceImplTest extends BaseTest {
     @Test
     public void testInsertUser() {
         User user = new User();
-        user.setNickname("TestNickName");
-        user.setState(1);
-        userService.insertUser(user);
+        userService.saveUser(user);
+
     }
 
 }

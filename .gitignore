@@ -3,4 +3,5 @@
 /.*
 !.gitignore
 *.iml
+/resources/xsd/*.xsd
 
