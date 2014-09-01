@@ -34,10 +34,8 @@
         <property name="maxWait">
             <value>60000</value>
         </property>
-        <!-- 连接池最大空闲 -->
-        <property name="maxIdle">
-            <value>20</value>
-        </property>
+        <!-- TODO: 连接池最大空闲 -->
+
         <!-- 连接池最小空闲 -->
         <property name="minIdle">
             <value>3</value>
@@ -63,10 +61,6 @@
           p:configLocation="classpath:conf/mybatis-config.xml"
           p:mapperLocations="classpath:mapper/*.xml"/>
     <!-- configLocation为mybatis属性 mapperLocations为所有mapper-->
-
-    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg index="0" ref="sqlSessionFactory"/>
-    </bean>
 
     <!-- spring与mybatis整合配置，扫描所有dao -->
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer"

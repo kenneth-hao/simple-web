@@ -9,6 +9,10 @@ public interface BaseDao<E, PK extends Serializable> {
 
     Integer insert(E object);
 
+    Integer update(E object);
+
+    E delete(PK id);
+
     E findById(PK id);
 
 }

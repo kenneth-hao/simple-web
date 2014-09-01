@@ -14,7 +14,7 @@ public class User implements Serializable {
     private String password;
     private Short userType;
     private Short locked;
-    private Short credit;
+    private Integer credit;
     private Date lastVisit;
     private String lastIp;
 
@@ -58,11 +58,11 @@ public class User implements Serializable {
         this.locked = locked;
     }
 
-    public Short getCredit() {
+    public Integer getCredit() {
         return credit;
     }
 
-    public void setCredit(Short credit) {
+    public void setCredit(Integer credit) {
         this.credit = credit;
     }
 
