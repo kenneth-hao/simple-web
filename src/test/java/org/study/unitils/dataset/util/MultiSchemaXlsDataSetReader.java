@@ -67,7 +67,7 @@ public class MultiSchemaXlsDataSetReader {
                 }
             }
         } catch (Exception e) {
-            throw new UnitilsException("¥¥Ω® ˝æ›ºØ ß∞‹: "
+            throw new UnitilsException(""
                     + Arrays.toString(dataSetFiles), e);
         }
         return tableMap;
