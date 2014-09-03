@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
     <t_user user_name="Kenneth" password="123456" user_type="1"
-            credit="20" locked="0" last_visit="2011-06-06 00:00:00" last_ip="127.0.0.1" />
+            credit="20" locked="0" />
 </dataset>

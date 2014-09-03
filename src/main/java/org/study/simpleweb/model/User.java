@@ -2,7 +2,6 @@ package org.study.simpleweb.model;
 
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
  * Created by haoyuewen on 8/28/14.
@@ -15,8 +14,6 @@ public class User implements Serializable {
     private Short userType;
     private Short locked;
     private Integer credit;
-    private Date lastVisit;
-    private String lastIp;
 
     public Integer getUserId() {
         return userId;
@@ -66,19 +63,4 @@ public class User implements Serializable {
         this.credit = credit;
     }
 
-    public Date getLastVisit() {
-        return lastVisit;
-    }
-
-    public void setLastVisit(Date lastVisit) {
-        this.lastVisit = lastVisit;
-    }
-
-    public String getLastIp() {
-        return lastIp;
-    }
-
-    public void setLastIp(String lastIp) {
-        this.lastIp = lastIp;
-    }
 }

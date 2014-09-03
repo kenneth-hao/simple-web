@@ -11,7 +11,7 @@ public interface BaseDao<E, PK extends Serializable> {
 
     Integer update(E object);
 
-    E delete(PK id);
+    Integer delete(PK id);
 
     E findById(PK id);
 

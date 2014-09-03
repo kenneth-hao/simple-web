@@ -13,9 +13,7 @@
          password,
          user_type,
          locked,
-         credit,
-         last_visit,
-         last_ip
+         credit
     </sql>
 
     <sql id="tableName">
@@ -29,11 +27,10 @@
         <result property="userType" column="user_type" javaType="Short" />
         <result property="locked" column="locked" javaType="Short" />
         <result property="credit" column="credit" javaType="Integer" />
-        <result property="lastVisit" column="last_visit" javaType="Date" />
-        <result property="lastIp" column="last_ip" javaType="String" />
     </resultMap>
 
-    <insert id="insert" parameterType="User" keyProperty="userId" useGeneratedKeys="true">
+    <insert id="insert" parameterType="User" keyProperty="userId" useGeneratedKeys="true"
+            flushCache="true" timeout="20">
         insert into <include refid="tableName" /> (
             <include refid="columnsExcludePk" />
         )
@@ -43,11 +40,29 @@
             #{password},
             #{userType},
             #{locked},
-            #{credit},
-            #{lastVisit},
-            #{lastIp}
+            #{credit}
         )
     </insert>
+
+    <update id="update" parameterType="User" flushCache="true" timeout="20">
+        update <include refid="tableName" />
+          <set>
+              <if test="userName != null">user_name=#{userName},</if>
+              <if test="password != null">password=#{password},</if>
+              <if test="userType != null">user_type=#{userType},</if>
+              <if test="locked != null">locked=#{locked},</if>
+              <if test="credit != null">credit=#{credit}</if>
+          </set>
+        where
+        <include refid="columnPk" />=#{userId}
+    </update>
+
+    <delete id="delete" parameterType="Integer" flushCache="true" timeout="20">
+        delete from
+        <include refid="tableName" />
+        where
+        <include refid="columnPk" />=#{id}
+    </delete>
 
     <select id="findById" parameterType="Integer" resultMap="userResultMap">
         select

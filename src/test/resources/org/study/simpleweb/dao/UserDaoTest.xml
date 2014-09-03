@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataset>
-    <t_user user_id="1000" user_name="Jack" password="123456" user_type="1" locked="0" credit="10" last_visit="2011-06-06 00:00:00" last_ip="127.0.0.1" />
-    <t_user user_id="1001" user_name="Tom" password="123456" user_type="2" locked="0" credit="20" last_visit="2011-05-01 00:00:00" last_ip="127.0.0.1" />
-    <t_user user_id="1002" user_name="John" password="123456" user_type="1" locked="0" credit="10" last_visit="2011-12-26 00:00:00" last_ip="127.0.0.1" />
-    <t_user user_id="1003" user_name="Lucy" password="123456" user_type="1" locked="1" credit="50" last_visit="2011-09-10 00:00:00" last_ip="127.0.0.1" />
-    <t_user user_id="1004" user_name="Helen" password="123456" user_type="1" locked="0" credit="100" last_visit="2011-08-06 00:00:00" last_ip="127.0.0.1" />
+    <t_user user_id="1000" user_name="Jack" password="123456" user_type="1" locked="0" credit="10" />
+    <t_user user_id="1001" user_name="Tom" password="123456" user_type="2" locked="0" credit="20" />
+    <t_user user_id="1002" user_name="John" password="123456" user_type="1" locked="0" credit="10" />
+    <t_user user_id="1003" user_name="Lucy" password="123456" user_type="1" locked="1" credit="50" />
+    <t_user user_id="1004" user_name="Helen" password="123456" user_type="1" locked="0" credit="100" />
 </dataset>
